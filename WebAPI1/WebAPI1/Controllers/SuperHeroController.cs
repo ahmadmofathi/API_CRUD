@@ -28,14 +28,14 @@ namespace WebAPI1.Controllers
 
         [HttpGet]
 
-        public async Task<ActionResult<List<SuperHero>>> GetAll()
+        public ActionResult<List<SuperHero>> GetAll()
         {
             return Ok(Heros);
         }
 
         [HttpGet("{id}")]
 
-        public async Task<ActionResult<SuperHero>> GetById(int id)
+        public ActionResult<SuperHero> GetById(int id)
         {
             SuperHero? hero = Heros.FirstOrDefault(x=>x.id==id);
             if(hero is null)
